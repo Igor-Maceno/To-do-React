@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 //Components
 import Header from "./components/Header";
@@ -13,13 +13,16 @@ import styles from "./App.module.css";
 import { ITask } from "./interfaces/task";
 
 function App() {
+
+  const [taskList, setTaskList] = useState<ITask[]>([])
+
   return (
     <div className="App">
       <Header />
       <main className={styles.main}>
         <div>
           <h2>O que você vai fazer?</h2>
-          <TaskForm btnText="Criar tarefa"/>
+          <TaskForm btnText="Criar tarefa" taskList={taskList} setTaskList={setTaskList}/>
         </div>
         <div>
           <h2>Suas tarefas:</h2>
