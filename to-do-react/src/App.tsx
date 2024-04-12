@@ -4,12 +4,17 @@ import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+//CSS
+import styles from "./App.module.css";
+
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <p>Conteúdo...</p>
-      <Footer/>
+      <Header />
+      <main className={styles.main}>
+        <p>Conteúdo...</p>
+      </main>
+      <Footer />
     </div>
   );
 }
